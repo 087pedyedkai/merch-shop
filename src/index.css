@@ -1,9 +1,22 @@
 /* Custom styles for the application */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Prompt', 'Noto Sans Thai', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force Prompt font for all elements */
+* {
+  font-family: 'Prompt', 'Noto Sans Thai', sans-serif !important;
+}
+
+/* Ensure headings use Prompt */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prompt', 'Noto Sans Thai', sans-serif !important;
+}
+
+/* Ensure buttons and inputs use Prompt */
+button, input, textarea, select {
+  font-family: 'Prompt', 'Noto Sans Thai', sans-serif !important;
 }
