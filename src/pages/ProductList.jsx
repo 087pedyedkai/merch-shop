@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
       <div className="aspect-w-1 aspect-h-1 w-full">
         <img
           src={product.image}
@@ -30,50 +30,52 @@ const ProductCard = ({ product }) => {
           className="w-full h-48 object-cover"
         />
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {product.name}
         </h3>
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-3 line-clamp-3 flex-grow min-h-[4.5rem]">
           {product.description}
         </p>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xl font-bold text-blue-600">
-            {formatPrice(product.price)}
-          </span>
-          <span className="text-sm text-gray-500">
-            คงเหลือ: {product.stock}
-          </span>
-        </div>
-        <div className="flex space-x-2">
-          <Link
-            to={`/products/${product.id}`}
-            className="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-md text-center hover:bg-gray-200 transition-colors duration-200"
-          >
-            ดูรายละเอียด
-          </Link>
-          {user && (
-            <button
-              onClick={handleAddToCart}
-              disabled={adding || product.stock === 0 || isInCart(product.id)}
-              className={`flex-1 px-4 py-2 rounded-md text-center transition-colors duration-200 ${
-                product.stock === 0
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : isInCart(product.id)
-                  ? 'bg-green-500 text-white cursor-default'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
+        <div className="mt-auto">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xl font-bold text-blue-600">
+              {formatPrice(product.price)}
+            </span>
+            <span className="text-sm text-gray-500">
+              คงเหลือ: {product.stock}
+            </span>
+          </div>
+          <div className="flex space-x-2">
+            <Link
+              to={`/products/${product.id}`}
+              className="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-md text-center hover:bg-gray-200 transition-colors duration-200"
             >
-              {adding
-                ? 'กำลังเพิ่ม...'
-                : product.stock === 0
-                ? 'สินค้าหมด'
-                : isInCart(product.id)
-                ? 'อยู่ในตะกร้า'
-                : 'เพิ่มลงตะกร้า'
-              }
-            </button>
-          )}
+              ดูรายละเอียด
+            </Link>
+            {user && (
+              <button
+                onClick={handleAddToCart}
+                disabled={adding || product.stock === 0 || isInCart(product.id)}
+                className={`flex-1 px-4 py-2 rounded-md text-center transition-colors duration-200 ${
+                  product.stock === 0
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : isInCart(product.id)
+                    ? 'bg-green-500 text-white cursor-default'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
+                {adding
+                  ? 'กำลังเพิ่ม...'
+                  : product.stock === 0
+                  ? 'สินค้าหมด'
+                  : isInCart(product.id)
+                  ? 'อยู่ในตะกร้า'
+                  : 'เพิ่มลงตะกร้า'
+                }
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

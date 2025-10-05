@@ -2,9 +2,11 @@
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzM3NEFCNiIvPgo8dGV4dCB4PSI1IiB5PSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0ZGRkZGRiI+TUpVPC90ZXh0Pgo8L3N2Zz4K" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ร้านของสาขา - Merch Shop</title>
+    <title>CSMJU Store</title>
+    <meta name="description" content="ร้านของสาขาวิทยาการคอมพิวเตอร์ มหาลัยแม่โจ้ - จำหน่ายสินค้าคุณภาพสำหรับนักศึกษา พนักงาน และบุคคลทั่วไป" />
+    
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,13 +14,38 @@
         theme: {
           extend: {
             colors: {
-              primary: '#3B82F6',
-              secondary: '#8B5CF6',
+              primary: {
+                50: '#eff6ff',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+              mju: {
+                blue: '#374AB6',
+                gold: '#FFD700',
+                green: '#228B22',
+              }
+            },
+            fontFamily: {
+              'thai': ['Sarabun', 'Noto Sans Thai', 'sans-serif'],
             }
           }
         }
       }
     </script>
+    
+    <!-- Google Fonts - Thai Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

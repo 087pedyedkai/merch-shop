@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { clearAllData, initializeTestData } from '../utils/testData';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  // ฟังก์ชันล้างข้อมูลและโหลดใหม่
+  const handleRefreshData = () => {
+    clearAllData();
+    initializeTestData();
+    window.location.reload();
+  };
 
   return (
     <footer className="bg-gray-800 text-white">
@@ -10,9 +18,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* ข้อมูลร้าน */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">ร้านของสาขา</h3>
+            <h3 className="text-lg font-semibold mb-4">ร้านค้าของที่ระลึก</h3>
             <p className="text-gray-300 text-sm mb-4">
-              ร้านค้าออนไลน์สำหรับนักศึกษา จำหน่ายสินค้าคุณภาพดี ราคาเป็นมิตร
+              ร้านค้าออนไลน์ของที่ระลึก จำหน่ายสินค้าคุณภาพดี ราคาเป็นมิตร
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white">
@@ -87,13 +95,20 @@ const Footer = () => {
             <p className="text-sm text-gray-300">
               © {currentYear} ร้านของสาขา. สงวนลิขสิทธิ์
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex space-x-6 mt-4 md:mt-0 items-center">
               <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                 นโยบายความเป็นส่วนตัว
               </a>
               <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                 เงื่อนไขการใช้งาน
               </a>
+              <button
+                onClick={handleRefreshData}
+                className="text-xs text-gray-400 hover:text-gray-300 transition-colors px-2 py-1 rounded border border-gray-600 hover:border-gray-500"
+                title="รีเฟรชข้อมูลสินค้า"
+              >
+                ⟳ รีเฟรช
+              </button>
             </div>
           </div>
         </div>
