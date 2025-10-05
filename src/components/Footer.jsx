@@ -102,13 +102,13 @@ const Footer = () => {
               <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                 เงื่อนไขการใช้งาน
               </a>
-              <button
+              {/* <button
                 onClick={handleRefreshData}
                 className="text-xs text-gray-400 hover:text-gray-300 transition-colors px-2 py-1 rounded border border-gray-600 hover:border-gray-500"
                 title="รีเฟรชข้อมูลสินค้า"
               >
                 ⟳ รีเฟรช
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
