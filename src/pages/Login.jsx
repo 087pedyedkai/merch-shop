@@ -128,8 +128,8 @@ const Login = () => {
               ทดสอบบัญชี: 
             </p>
             <div className="mt-2 space-y-1 text-xs text-gray-500">
-              <p>แอดมิน: admin@test.com / password</p>
-              <p>ลูกค้า: customer@test.com / password</p>
+              <p>แอดมิน: admin@test.com / password admin123</p>
+              <p>ลูกค้า: customer@test.com / password customer123</p>
             </div>
           </div>
         </form>
