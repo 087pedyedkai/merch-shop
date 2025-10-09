@@ -85,9 +85,9 @@ export const ProductProvider = ({ children }) => {
     return { success: true, message: 'เพิ่มสินค้าสำเร็จ' };
   };
 
-  const updateProduct = (id, productData) => {
+  const updateProduct = (productData) => {
     const updatedProducts = products.map(product =>
-      product.id === id 
+      product.id === productData.id 
         ? { ...product, ...productData, updatedAt: new Date().toISOString() }
         : product
     );

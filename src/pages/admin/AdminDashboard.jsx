@@ -183,9 +183,12 @@ const AdminDashboard = () => {
               </div>
             </div>
             <div className="mt-4">
-              <button className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
+              <Link
+                to="/admin/reports"
+                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700"
+              >
                 ดูรายงาน
-              </button>
+              </Link>
             </div>
           </div>
         </div>

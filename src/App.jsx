@@ -21,7 +21,9 @@ import OrderHistory from './pages/OrderHistory';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
 import AddProduct from './pages/admin/AddProduct';
+import EditProduct from './pages/admin/EditProduct';
 import AdminOrders from './pages/admin/AdminOrders';
+import SalesReport from './pages/admin/SalesReport';
 
 function App() {
   return (
@@ -48,7 +50,9 @@ function App() {
                     <Route path="/admin" element={<AdminDashboard />} />
                     <Route path="/admin/products" element={<AdminProducts />} />
                     <Route path="/admin/products/add" element={<AddProduct />} />
+                    <Route path="/admin/products/edit/:id" element={<EditProduct />} />
                     <Route path="/admin/orders" element={<AdminOrders />} />
+                    <Route path="/admin/reports" element={<SalesReport />} />
                   </Routes>
                 </main>
                 <Footer />
